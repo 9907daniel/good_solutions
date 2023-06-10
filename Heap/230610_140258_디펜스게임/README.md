@@ -1,5 +1,5 @@
 ## 디펜스게임 lvl2 pg
-https://school.programm230610
+https://school.programmers.co.kr/learn/courses/30/lessons/142085
 
 !!실패!!
 
