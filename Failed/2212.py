@@ -1,60 +1,63 @@
-# 10:15
-#
-# 센서 n개, 집중국 k개
-# 입력값 : 배열은 최대 100만 크기이다
-# 문제 요구사항 : 주어진 센서 위치에 따라 집중극 k개의 위치를 정하자
-# 알고리즘 : 100만 입출력을 갖기 때문에 크게 : 그리디, DP, 이진을 생각할 수 있다
+# 18:16 ~ 19:03
 # 
-# 2
-# 1 _ 3 _ _ 6 6 7 _ 9
-#   1           1
-#   2 + 3 = 5
-# 어느 한쪽에 모여있는것과 상관 없이, n/3개를 나눠서 생각하면 편할듯하다
+# 입출력 : 1만이지만 전체 좌표는 100만이다
+#  -> 여기서 카메라를 일정 거리마다 설치한다 -> 매게변수 탐색
 # 
-#
-# 어디다 설치를 해야지 최속밧일까?
-#
-#
-# 다 iterate 하는것보다.. 두 차이가 가장 작은 enpoint k개를 찾아도..
-#
-#
-# sum = 32 
-# average = 5.3xxx
+# target = 떨어져 있는 거리
 # 
-# 10
-# 5
-# 3 6 7 8 10 12 14 15 18 20
-#   1   1   1    1   1 
-
-
+# 1 _ 3 _5 6 7 _ 9
+# 
 n = int(input())
 k = int(input())
 l = list(map(int, input().split()))
 
 l.sort()
+start = l[0]
+end = l[-1]
 
-distance = []
-for a in range(1, n):
-    distance.append(l[a]-l[a-1])
-
-print(distance)
-
-distance.sort(reverse=True)
-
-for _ in range(k-1):
-    distance.pop(0)
-
-print(distance)
-
-
-# d = [0]*len(l)
-# # 계속 하나 넘어가면서 swap-out
-
-# for a in range(len(l)):
+while start<=end:
+    mid = (start+end)//2
     
+    installed = 0
+    current = l[0]
 
+    for a in range(1, len(l)):
+        if current <= l[a] < current+mid:
+            continue
+        else:
+            installed += 1
+            current = current + mid
+            if installed > k:
+                break
+            
+    if installed > k:
+        start = mid + 1
+    else:
+        end = mid - 1
 
+print(mid)
 
+#
+# 3 _ _ 6 7 8 _ 10 _ 12 _ 14 15 _ _ 18 _ 20
+#
+#
+# 3 6 7 8 10 12 14 15 18 20
+# start = 3 mid = 11 end = 20
+# start = 
+#
+# 3 ~ 11
+#
+#
+#
+# 1 3 6 6 7 9
+# 
+# start = 1 mid = 5 end = 9 
+# installed = 1, start = 1
+# 
+#
+#
+#
+    
 
 
 

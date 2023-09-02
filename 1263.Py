@@ -44,29 +44,7 @@ for _ in range(n):
 
 l.sort(key=lambda x:x[1])
 
-current = l[0][1]-l[0][0]
 
-# 가장 늦게 끝난 시간
-current_finish = l[0][1]
-print(l)
-for a in range(1, len(l)):
-    print(current, current_finish)
-    # 만약 현재 가장 늦게 시작해도 괜찮은 시간이 전 작업 중 가장 늦게 끝난 시간보다 크다면 괜찮다!
-    if l[a][1]-l[a][0] >= current_finish:
-        current_finish += l[a][0]
-    else:
-        # 아니라면 전체 시간을 그 차이만큼 앞당겨줘야한다
-        if current - (current_finish-(l[a][1]-l[a][0])) >= 0:
-            current_finish += l[a][1] - current_finish
-            current -= l[a][0]-current_finish
-        # 앞당기는데 0 밑으로 간다면 부가능한 작업이다
-        else:
-            print(-1)
-            sys.exit()
-    print(current, current_finish)
-
-
-print(current)
 
 # import sys
 
