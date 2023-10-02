@@ -35,10 +35,10 @@ def snail(length, answer,l):
                 
                 if l[0]<=current_x<=l[2] and l[1]<=current_y<=l[3]:
                     answer[current_x-l[0]][current_y-l[1]] = count
-                    current_max = count
+                    current_max = max(current_max, count)
 
                 if count == length*length:
-                    return answer,count
+                    return answer,current_max
                 
             if current_direction == 'right':
                 current_direction = 'up'
@@ -82,19 +82,17 @@ graph, num = snail(length, answer,l)
 # for a in graph:
 #     print(*a, end = ' ')
     
-max_len = len(str(num-1))
+max_len = len(str(num))
 
 for a in range(l[2]-l[0]+1):
     for b in range(l[3]-l[1]+1):
-        print(str(answer[a][b]).rjust(max_len), end= ' ')
+        print(str(answer[a][b]).rjust(max_len), end= " ")
     print()
 # for a in range(4):
 #     l[a] = l[a]+mid
 #     # 0 0 5 3
-    
 
 # for a in range(l[0], l[2]+1):
 #     for b in range(l[1], l[3]+1):
 #         answer[a-l[0]][b-l[1]] = graph[a][b]
-        
 # for a in answer: 

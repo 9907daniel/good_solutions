@@ -52,51 +52,51 @@ print(answer)
 # # 언니 동생 end 격차 가장 적은거를 찾아 두번의 투포인터를 활용한다면..? 
 
 # # 이번 투포인터 문제는 양끝 시작보다 첫,두번째 시작이 맞는듯 -> sliding window
-# first = 0
-# second = 1
+first = 0
+second = 1
 
-# smallest = 1e10
-# record_start = -1
-# record_end = -1
+smallest = 1e10
+record_start = -1
+record_end = -1
 
-# total_difference = 0
+total_difference = 0
 
-# while second < len(l):
-#     difference = abs(l[second]-l[first])
+while second < len(l):
+    difference = abs(l[second]-l[first])
     
-#     if difference < smallest:
-#         smallest = difference
-#         record_start = first
-#         record_end = second
-#     first += 1
-#     second += 1
+    if difference < smallest:
+        smallest = difference
+        record_start = first
+        record_end = second
+    first += 1
+    second += 1
 
-# total_difference += abs(l[record_start]-l[record_end])
-# l.pop(record_start)
-# l.pop(record_end)
+total_difference += abs(l[record_start]-l[record_end])
+l.pop(record_start)
+l.pop(record_end)
 
-# first = 0
-# second = 1
+first = 0
+second = 1
 
-# smallest = 1e10
-# record_start = -1
-# record_end = -1
+smallest = 1e10
+record_start = -1
+record_end = -1
 
-# total_difference = 0
+total_difference = 0
 
-# while second < len(l):
-#     difference = abs(l[second]-l[first])
+while second < len(l):
+    difference = abs(l[second]-l[first])
     
-#     if difference < smallest:
-#         smallest = difference
-#         record_start = first
-#         record_end = second
-#     first += 1
-#     second += 1
+    if difference < smallest:
+        smallest = difference
+        record_start = first
+        record_end = second
+    first += 1
+    second += 1
 
-# total_difference += abs(l[record_start]-l[record_end])
+total_difference += abs(l[record_start]-l[record_end])
 
-# print(total_difference)
+print(total_difference)
 
 
 #### 풀이 1)
