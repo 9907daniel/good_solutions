@@ -10,7 +10,6 @@ from heapq import heappush,heappop
 n,m = map(int,input().split())
 
 graph = [[] for _ in range(n+1)]
-visited = [False]*(n+1)
 distance = [1e8]*(n+1)
 
 for _ in range(m):
