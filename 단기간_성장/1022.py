@@ -2,8 +2,7 @@
 # 
 # 빡구현 문제이다
 # 만약 5000*5000 달팽이를 구현한다면..? 메모리 초과가 날 가능성이 있다
-# 
-# 
+#     5000 4950
 # 
 import sys
 
@@ -32,7 +31,6 @@ def snail(length, answer,l):
                 elif current_direction == 'down':
                     current_x += 1
                     
-                
                 if l[0]<=current_x<=l[2] and l[1]<=current_y<=l[3]:
                     answer[current_x-l[0]][current_y-l[1]] = count
                     current_max = max(current_max, count)
@@ -88,6 +86,8 @@ for a in range(l[2]-l[0]+1):
     for b in range(l[3]-l[1]+1):
         print(str(answer[a][b]).rjust(max_len), end= " ")
     print()
+    
+    
 # for a in range(4):
 #     l[a] = l[a]+mid
 #     # 0 0 5 3
